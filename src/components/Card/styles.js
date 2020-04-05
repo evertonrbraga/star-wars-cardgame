@@ -5,10 +5,10 @@ export const CardContainer = styled.div`
 
   width: 250px;
   height: 380px;
-  border: 3px solid #335777;
   margin: 15px;
   border-radius: 10px;
   background: #3290c3;
+  box-shadow: -3px 3px 10px black;
 
   h1 {
     font-family: "Arvo", serif;
@@ -23,9 +23,11 @@ export const CardContainer = styled.div`
 
   img {
     width: 100%;
+    height: 140px;
     padding: 8px 8px 6px 8px;
     box-sizing: border-box;
     border-radius: 20px;
+    object-fit: cover;
   }
 
   .icons {
@@ -94,14 +96,6 @@ export const CardContainer = styled.div`
       outline: 0;
     }
 
-    /* .unclicked-button {
-      box-shadow: -2px 2px 3px #2e2622;
-    }
-
-    .clicked-button {
-      inner-shadow: -2px 2px 3px #2e2622;
-    } */
-
     .icon {
       color: #f7e5cd;
       font-size: 24px;
@@ -117,7 +111,6 @@ export const CardContainer = styled.div`
     .info {
       display: flex;
       align-items: center;
-      /* justify-content: center; */
       width: 230px;
       height: 80px;
       border-radius: 5px;
@@ -130,16 +123,10 @@ export const CardContainer = styled.div`
         color: #a77133;
       }
 
-      .icon-arrow {
-        font-size: 1.2em;
-        color: #a77133;
-        position: absolute;
-        right: 3px;
-        top: 30px;
-      }
-
       .content {
         margin-left: 12px;
+        display: flex;
+        flex-direction: column;
 
         p {
           margin: 2px;
@@ -169,7 +156,7 @@ export const InfoContainer = styled.div`
   }
 
   .attribute {
-    font-weight: bold;
+    font-weight: 700;
     color: #ff9999;
   }
 `;
