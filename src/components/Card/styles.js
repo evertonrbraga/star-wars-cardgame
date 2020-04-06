@@ -58,13 +58,8 @@ export const CardContainer = styled.div`
     }
 
     .clicky {
-      /** Offset the Position **/
       position: relative;
-
-      /** 3D Block Effect **/
       box-shadow: 0 10px 0 0 #754e23;
-
-      /** Make it look pretty **/
       display: flex;
       background: #a77133;
       border: 3px solid #754e23;
@@ -75,24 +70,19 @@ export const CardContainer = styled.div`
     }
 
     .clicky:active {
-      /** Remove 3D Block Effect on Click **/
       box-shadow: none;
-
       top: 10px;
       margin-bottom: 0px;
     }
 
     .clicked {
-      /** Remove 3D Block Effect on Click **/
       box-shadow: none;
-
       top: 10px;
       margin-bottom: 0px;
     }
 
     .clicky:active,
     .clicky:focus {
-      /** Remove Chrome's Ugly Yellow Outline **/
       outline: 0;
     }
 

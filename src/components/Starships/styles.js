@@ -26,5 +26,10 @@ export const InfoContainer = styled.div`
 
   .texts {
     margin: 9px 0;
+
+    .ps__rail-y,
+    .ps__thumb-y {
+      height: 0 !important;
+    }
   }
 `;

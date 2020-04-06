@@ -11,7 +11,7 @@ export const Homeworld = ({ details }) => {
       <div className="content">
         <p>
           <strong>Name: </strong>
-          {name}
+          {name ? capitalize(name) : null}
         </p>
         <p>
           <strong>Climate: </strong>
@@ -19,7 +19,7 @@ export const Homeworld = ({ details }) => {
         </p>
         <p>
           <strong>Population: </strong>
-          {population}
+          {population ? capitalize(population) : null}
         </p>
       </div>
     </div>

@@ -1,8 +1,9 @@
 import React, { Component } from "react";
+import ScrollBar from "react-perfect-scrollbar";
 
 import api from "./services/api";
 import Card from "./components/Card";
-import { AppContainer, GlobalStyles } from "./styles";
+import { GlobalStyles, AppContainer, ContentContainer } from "./styles";
 import logo from "./assets/starwars-logo.svg";
 import catwars from "./assets/cat-wars.webp";
 
@@ -12,11 +13,11 @@ export default class App extends Component {
     page: 1,
   };
 
-  async componentDidMount() {
+  componentDidMount() {
     this.requestApi();
   }
 
-  componentDidUpdate(_, prevState) {
+  async componentDidUpdate(_, prevState) {
     if (prevState.page !== this.state.page) {
       this.requestApi();
     }
@@ -54,7 +55,7 @@ export default class App extends Component {
 
   handleClick = (e) => {
     const text = e.target.innerHTML;
-    return text === "prev"
+    return text === "Previous"
       ? this.setState((prevState) => {
           return {
             page: prevState.page - 1,
@@ -70,32 +71,41 @@ export default class App extends Component {
   render() {
     const { apiData, page } = this.state;
     return (
-      <AppContainer>
-        <div className="header">
-          <img className="logo" src={logo} alt="Star Wars Logo" />
-          <img className="gif" src={catwars} alt="Star Wars Logo" />
-        </div>
-        <div className="main-wrapper">
-          {apiData
-            ? apiData.map((character, i) => {
-                return (
-                  <div key={i}>
-                    <GlobalStyles />
-                    <Card
-                      image={`${page - 1}${i}-character.jpg`}
-                      character={character}
-                    />
-                  </div>
-                );
-              })
-            : null}
-        </div>
-        <button disabled={page === 1} onClick={this.handleClick}>
-          prev
-        </button>
-        <button disabled={page === 3} onClick={this.handleClick}>
-          next
-        </button>
+      <AppContainer apiData={apiData}>
+        <GlobalStyles />
+        <ScrollBar>
+          <ContentContainer>
+            <div className="header">
+              <img className="logo" src={logo} alt="Star Wars Logo" />
+              <img className="gif" src={catwars} alt="Star Wars Logo" />
+            </div>
+            <div className="main-wrapper">
+              {apiData
+                ? apiData.map((character, i) => {
+                    return (
+                      <div key={i}>
+                        <Card
+                          image={`${page - 1}${i}-character.jpg`}
+                          page={page}
+                          character={character}
+                        />
+                      </div>
+                    );
+                  })
+                : null}
+            </div>
+          </ContentContainer>
+        </ScrollBar>
+        <footer>
+          <div className="button-container">
+            <button disabled={page === 1} onClick={this.handleClick}>
+              Previous
+            </button>
+            <button disabled={page === 3} onClick={this.handleClick}>
+              Next
+            </button>
+          </div>
+        </footer>
       </AppContainer>
     );
   }
