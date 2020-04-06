@@ -6,4 +6,6 @@ Instruções
 
 Para rodar o comando "npm" o Node.js deve estar instalado, da mesma forma para usar o "yarn" ele deve estar instalado na máquina também.
 
+PS: Por questões de usabilidade, as barras padrão podem ficar ocultas, porém o scroll funciona normalmente.
+
 Curta a aplicação :)
