@@ -11,7 +11,7 @@ export const CardContainer = styled.div`
   box-shadow: -3px 3px 10px black;
 
   h1 {
-    font-family: "Arvo", serif;
+    font-family: "Arvo", sans-serif;
     font-size: 1.4em;
     text-align: center;
     background: #ec7648;
