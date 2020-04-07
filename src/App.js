@@ -10,7 +10,7 @@ import catwars from "./assets/cat-wars.webp";
 export default class App extends Component {
   state = {
     apiData: null,
-    page: 1,
+    page: 1
   };
 
   componentDidMount() {
@@ -27,7 +27,7 @@ export default class App extends Component {
     const { page } = this.state;
     const res = await api.get(`/people/?page=${page}`);
     await this.setState({
-      apiData: res.data.results,
+      apiData: res.data.results
     });
     this.state.apiData.forEach((character, i) => {
       this.requestInside(character.homeworld, character.starships, i);
@@ -39,11 +39,11 @@ export default class App extends Component {
     const apiData = [...this.state.apiData];
     apiData[i].homeworld = homeworld.data;
     this.setState({
-      apiData,
+      apiData
     });
     if (starshipsReq) {
       const arr = [];
-      starshipsReq.map(async (url) => {
+      starshipsReq.map(async url => {
         const starships = await api.get(url);
         arr.push(starships.data);
       });
@@ -53,17 +53,17 @@ export default class App extends Component {
     }
   };
 
-  handleClick = (e) => {
+  handleClick = e => {
     const text = e.target.innerHTML;
     return text === "Previous"
-      ? this.setState((prevState) => {
+      ? this.setState(prevState => {
           return {
-            page: prevState.page - 1,
+            page: prevState.page - 1
           };
         })
-      : this.setState((prevState) => {
+      : this.setState(prevState => {
           return {
-            page: prevState.page + 1,
+            page: prevState.page + 1
           };
         });
   };
@@ -76,7 +76,12 @@ export default class App extends Component {
         <ScrollBar>
           <ContentContainer>
             <div className="header">
-              <img className="logo" src={logo} alt="Star Wars Logo" />
+              <img
+                className="logo"
+                onClick={() => this.setState({ page: 1 })}
+                src={logo}
+                alt="Star Wars Logo"
+              />
               <img className="gif" src={catwars} alt="Star Wars Logo" />
             </div>
             <div className="main-wrapper">
@@ -101,7 +106,7 @@ export default class App extends Component {
             <button disabled={page === 1} onClick={this.handleClick}>
               Previous
             </button>
-            <button disabled={page === 3} onClick={this.handleClick}>
+            <button disabled={page === 9} onClick={this.handleClick}>
               Next
             </button>
           </div>

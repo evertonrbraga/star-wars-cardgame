@@ -8,7 +8,7 @@ export const GlobalStyles = createGlobalStyle`
 
 export const AppContainer = styled.div`
   width: 100vw;
-  height: ${(props) => (props.apiData ? "auto" : "100vh")};
+  height: ${props => (props.apiData ? "auto" : "100vh")};
   background: linear-gradient(to bottom, #430074, black);
   background-attachment: fixed;
   display: flex;
@@ -18,7 +18,7 @@ export const AppContainer = styled.div`
   footer {
     width: 100vw;
     background: #290049;
-    display: ${(props) => (props.apiData ? "flex" : "none")};
+    display: ${props => (props.apiData ? "flex" : "none")};
     justify-content: center;
     position: fixed;
     bottom: 0;
@@ -61,6 +61,7 @@ export const ContentContainer = styled.div`
     .logo {
       width: 300px;
       padding: 25px;
+      cursor: pointer;
     }
 
     .gif {
