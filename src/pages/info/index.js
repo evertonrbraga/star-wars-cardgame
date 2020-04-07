@@ -5,10 +5,10 @@ import { InfoContainer } from "./styles";
 
 const Info = () => {
   return (
-    <div>
+    <InfoContainer>
       <p>info</p>
       <Link to="/">return</Link>
-    </div>
+    </InfoContainer>
   );
 };
 
