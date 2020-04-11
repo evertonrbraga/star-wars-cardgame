@@ -1,16 +1,19 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { FaGlobeAmericas, FaJedi } from "react-icons/fa";
 
-import { CardContainer, InfoContainer } from "./styles";
 import { Homeworld } from "../Homeworld";
 import { Starships } from "../Starships";
 import { capitalize, fix } from "../../utils";
+import { CardContainer, InfoContainer } from "./styles";
+import { ThemeContext } from "../../theme-context";
 
 const Card = ({ image, character, page }) => {
   const { name, gender, height, mass, homeworld, starships } = character;
 
   const [homeworldBtn, setHomeworldBtn] = useState("clicked");
   const [starshipsBtn, setStarshipsBtn] = useState("");
+
+  const [theme, setTheme] = useContext(ThemeContext);
 
   useEffect(() => {
     setHomeworldBtn("clicked");
@@ -26,7 +29,9 @@ const Card = ({ image, character, page }) => {
   return (
     <CardContainer>
       <img src={require(`../../assets/characters/${image}`)} alt={name} />
-      <h1>{fix(name)}</h1>
+      <h1 onClick={() => setTheme("red")} style={{ background: theme }}>
+        {fix(name)}
+      </h1>
       <InfoContainer>
         <p className="attribute">{`Gender: `}</p>
         <span>
@@ -41,7 +46,6 @@ const Card = ({ image, character, page }) => {
         <p className="attribute">{`Mass: `}</p>
         <span>{`${fix(mass)}`}</span>
       </InfoContainer>
-
       <div className="icons">
         <button
           onClick={() =>
@@ -66,7 +70,6 @@ const Card = ({ image, character, page }) => {
           </span>
         </button>
       </div>
-
       <div className="info-container">
         {homeworldBtn ? (
           <Homeworld details={homeworld} />

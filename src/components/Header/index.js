@@ -17,7 +17,7 @@ const Header = () => {
         />
         <img className="gif" src={catwars} alt="Star Wars Logo" />
       </div>
-      <Link to="/info" className="btn-info">
+      <Link to="/info" className="route-btn">
         + INFO
       </Link>
     </ContentContainer>

@@ -21,18 +21,10 @@ export const ContentContainer = styled.div`
       transform: rotate(10deg);
     }
   }
-  .btn-info {
+  .route-btn {
     position: absolute;
     top: 15px;
     right: 0;
-    color: #fff;
-    font-weight: bold;
-    background: #ec7648;
-    text-shadow: -1px 1px 2px #2e2622;
-    padding: 5px 10px;
-    border-radius: 5px;
-    box-shadow: -1px 1px 3px black;
-    text-decoration: none;
   }
 
   @media (max-width: 480px) {

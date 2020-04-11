@@ -7,7 +7,7 @@ import { GlobalStyles, AppContainer, ContentContainer } from "./styles";
 
 export default class App extends Component {
   state = {
-    apiData: null,
+    apiData: "",
     page: 1
   };
 

@@ -1,4 +1,21 @@
-import styled from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
+
+export const GlobalStyle = createGlobalStyle`
+  body {
+    font-family: 'Roboto', sans-serif;
+  }
+
+  .route-btn {
+    color: #fff;
+    font-weight: bold;
+    background: #ec7648;
+    text-shadow: -1px 1px 2px #2e2622;
+    padding: 5px 10px;
+    border-radius: 5px;
+    box-shadow: -1px 1px 3px black;
+    text-decoration: none;
+  }
+`;
 
 export const AppContainer = styled.div`
   width: 100vw;
