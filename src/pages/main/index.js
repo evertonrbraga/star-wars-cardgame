@@ -25,11 +25,9 @@ export default class App extends Component {
     const { page } = this.state;
     const res = await api.get(`/characters/?_page=${page}`);
     console.log(res);
-    // const { page } = this.state;
-    // const res = await api.get(`/people/?page=${page}`);
-    // await this.setState({
-    //   apiData: res.data.results
-    // });
+    await this.setState({
+      apiData: res.data
+    });
     // this.state.apiData.forEach((character, i) => {
     //   this.requestInside(character.homeworld, character.starships, i);
     // });
@@ -70,41 +68,44 @@ export default class App extends Component {
   };
 
   render() {
-    // const { apiData, page } = this.state;
+    const { apiData, page } = this.state;
     return (
-      <div>oi</div>
-      // <AppContainer apiData={apiData}>
-      //   <GlobalStyles />
-      //   <ScrollBar>
-      //     <ContentContainer>
-      //       <div className="main-wrapper">
-      //         {apiData
-      //           ? apiData.map((character, i) => {
-      //               return (
-      //                 <div key={i}>
-      //                   <Card
-      //                     image={`${page - 1}${i}-character.jpg`}
-      //                     page={page}
-      //                     character={character}
-      //                   />
-      //                 </div>
-      //               );
-      //             })
-      //           : null}
-      //       </div>
-      //     </ContentContainer>
-      //   </ScrollBar>
-      //   <footer>
-      //     <div className="button-container">
-      //       <button disabled={page === 1} onClick={this.handleClick}>
-      //         Previous
-      //       </button>
-      //       <button disabled={page === 9} onClick={this.handleClick}>
-      //         Next
-      //       </button>
-      //     </div>
-      //   </footer>
-      // </AppContainer>
+      // <div>oi</div>
+      <AppContainer apiData={apiData}>
+        <GlobalStyles />
+        <ScrollBar>
+          <ContentContainer>
+            <div className="main-wrapper">
+              {apiData
+                ? apiData.map((character, i) => {
+                    return (
+                      <div key={`character${i}`}>
+                        {/* <Card
+                          image={`${page - 1}${i}-character.jpg`}
+                          page={page}
+                          character={character}
+                        /> */}
+                        <img src={character.image} alt={character.name} />
+                        <p>{character.name}</p>
+                        <p>{character.description}</p>
+                      </div>
+                    );
+                  })
+                : null}
+            </div>
+          </ContentContainer>
+        </ScrollBar>
+        <footer>
+          <div className="button-container">
+            <button disabled={page === 1} onClick={this.handleClick}>
+              Previous
+            </button>
+            <button disabled={page === 9} onClick={this.handleClick}>
+              Next
+            </button>
+          </div>
+        </footer>
+      </AppContainer>
     );
   }
 }
