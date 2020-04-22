@@ -70,7 +70,6 @@ export default class App extends Component {
   render() {
     const { apiData, page } = this.state;
     return (
-      // <div>oi</div>
       <AppContainer apiData={apiData}>
         <GlobalStyles />
         <ScrollBar>
