@@ -7,13 +7,22 @@ import { capitalize, fix } from "../../utils";
 import { CardContainer, InfoContainer } from "./styles";
 import { ThemeContext } from "../../theme-context";
 
-const Card = ({ image, character, page }) => {
-  const { name, gender, height, mass, homeworld, starships } = character;
+const Card = ({ character, page }) => {
+  const {
+    image,
+    name,
+    gender,
+    height,
+    mass,
+    homeworld,
+    starships,
+    description
+  } = character;
 
   const [homeworldBtn, setHomeworldBtn] = useState("clicked");
   const [starshipsBtn, setStarshipsBtn] = useState("");
 
-  const [theme, setTheme] = useContext(ThemeContext);
+  // const [theme, setTheme] = useContext(ThemeContext);
 
   useEffect(() => {
     setHomeworldBtn("clicked");
@@ -28,23 +37,15 @@ const Card = ({ image, character, page }) => {
 
   return (
     <CardContainer>
-      <img src={require(`../../assets/characters/${image}`)} alt={name} />
-      <h1 onClick={() => setTheme("red")} style={{ background: theme }}>
-        {fix(name)}
-      </h1>
+      <img src={image} alt={name} />
+      <h1>{name}</h1>
       <InfoContainer>
         <p className="attribute">{`Gender: `}</p>
-        <span>
-          {gender !== "n/a"
-            ? gender === "hermaphrodite"
-              ? "n/a"
-              : capitalize(fix(gender))
-            : gender}
-        </span>
+        <span>{`${gender} | `}</span>
         <p className="attribute">{`Height: `}</p>
-        <span>{`${fix(height)} |`}</span>
+        <span>{`${height} |`}</span>
         <p className="attribute">{`Mass: `}</p>
-        <span>{`${fix(mass)}`}</span>
+        <span>{`${mass}`}</span>
       </InfoContainer>
       <div className="icons">
         <button

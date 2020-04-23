@@ -4,7 +4,7 @@ export const CardContainer = styled.div`
   @import url("https://fonts.googleapis.com/css?family=Arvo:700i&display=swap");
 
   width: 250px;
-  height: 380px;
+  height: 488px;
   margin: 15px;
   border-radius: 10px;
   background: #3290c3;
@@ -23,7 +23,7 @@ export const CardContainer = styled.div`
 
   img {
     width: 100%;
-    height: 140px;
+    height: 245px;
     padding: 8px 8px 6px 8px;
     box-sizing: border-box;
     border-radius: 20px;

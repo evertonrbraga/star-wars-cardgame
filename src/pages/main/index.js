@@ -15,16 +15,15 @@ export default class App extends Component {
     this.requestApi();
   }
 
-  // async componentDidUpdate(_, prevState) {
-  //   if (prevState.page !== this.state.page) {
-  //     this.requestApi();
-  //   }
-  // }
+  async componentDidUpdate(_, prevState) {
+    if (prevState.page !== this.state.page) {
+      this.requestApi();
+    }
+  }
 
   requestApi = async () => {
     const { page } = this.state;
     const res = await api.get(`/characters/?_page=${page}`);
-    console.log(res);
     await this.setState({
       apiData: res.data
     });
@@ -79,14 +78,14 @@ export default class App extends Component {
                 ? apiData.map((character, i) => {
                     return (
                       <div key={`character${i}`}>
-                        {/* <Card
-                          image={`${page - 1}${i}-character.jpg`}
+                        <Card
+                          image={character.image}
                           page={page}
                           character={character}
-                        /> */}
-                        <img src={character.image} alt={character.name} />
+                        />
+                        {/* <img src={character.image} alt={character.name} />
                         <p>{character.name}</p>
-                        <p>{character.description}</p>
+                        <p>{character.description}</p> */}
                       </div>
                     );
                   })
@@ -99,7 +98,7 @@ export default class App extends Component {
             <button disabled={page === 1} onClick={this.handleClick}>
               Previous
             </button>
-            <button disabled={page === 9} onClick={this.handleClick}>
+            <button disabled={page === 5} onClick={this.handleClick}>
               Next
             </button>
           </div>
