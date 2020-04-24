@@ -4,11 +4,12 @@ export const CardContainer = styled.div`
   @import url("https://fonts.googleapis.com/css?family=Arvo:700i&display=swap");
 
   width: 250px;
-  height: 488px;
+  height: 422px;
   margin: 15px;
   border-radius: 10px;
   background: #3290c3;
   box-shadow: -3px 3px 10px black;
+  overflow: hidden;
 
   h1 {
     font-family: "Arvo", sans-serif;
@@ -23,11 +24,12 @@ export const CardContainer = styled.div`
 
   img {
     width: 100%;
-    height: 245px;
+    height: 180px;
     padding: 8px 8px 6px 8px;
     box-sizing: border-box;
     border-radius: 20px;
     object-fit: cover;
+    object-position: 0px 0px;
   }
 
   .icons {
