@@ -1,27 +1,14 @@
 import React from "react";
 import { FaGlobeAmericas } from "react-icons/fa";
 
-import { capitalize } from "../../utils";
-
-export const Homeworld = ({ details }) => {
-  const { name, climate, population } = details;
+import { Container } from "./styles";
+export const Homeworld = ({ homeworld }) => {
   return (
-    <div className="info">
+    <Container className="info">
       <FaGlobeAmericas className="icon" />
       <div className="content">
-        <p>
-          <strong>Name: </strong>
-          {name ? capitalize(name) : null}
-        </p>
-        <p>
-          <strong>Climate: </strong>
-          {climate ? capitalize(climate) : null}
-        </p>
-        <p>
-          <strong>Population: </strong>
-          {population ? capitalize(population) : null}
-        </p>
+        <p>{homeworld}</p>
       </div>
-    </div>
+    </Container>
   );
 };

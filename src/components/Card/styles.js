@@ -100,37 +100,9 @@ export const CardContainer = styled.div`
     justify-content: center;
     margin-top: 21px;
 
-    .info {
-      display: flex;
-      align-items: center;
-      width: 230px;
-      height: 80px;
-      border-radius: 5px;
-      background: #f7e5cd;
-      position: relative;
-
-      .icon {
-        margin-left: 12px;
-        font-size: 3.5em;
-        color: #a77133;
-      }
-
-      .content {
-        margin-left: 12px;
-        display: flex;
-        flex-direction: column;
-
-        p {
-          margin: 2px;
-          font-size: 0.75em;
-          color: #5e482b;
-
-          strong {
-            color: #5e482b;
-          }
-        }
-      }
-    }
+    /* .info {
+      
+    } */
   }
 `;
 

@@ -73,7 +73,7 @@ const Card = ({ character, page }) => {
       </div>
       <div className="info-container">
         {homeworldBtn ? (
-          <Homeworld details={homeworld} />
+          <Homeworld homeworld={homeworld} />
         ) : (
           <Starships name={name} details={starships} />
         )}
