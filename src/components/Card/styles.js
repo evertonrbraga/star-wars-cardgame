@@ -1,8 +1,6 @@
 import styled from "styled-components";
 
 export const CardContainer = styled.div`
-  @import url("https://fonts.googleapis.com/css?family=Arvo:700i&display=swap");
-
   width: 250px;
   height: 422px;
   margin: 15px;
@@ -48,6 +46,12 @@ export const CardContainer = styled.div`
         align-items: center;
         font-size: 0.8em;
         color: #f7e5cd;
+      }
+
+      .btn-history {
+        .icon {
+          margin-right: 15px;
+        }
       }
     }
 
@@ -99,10 +103,6 @@ export const CardContainer = styled.div`
     display: flex;
     justify-content: center;
     margin-top: 21px;
-
-    /* .info {
-      
-    } */
   }
 `;
 

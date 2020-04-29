@@ -16,7 +16,6 @@ export const Container = styled.div`
   }
 
   .content {
-    /* margin-left: 12px; */
     height: 100%;
     width: 100%;
     display: flex;
@@ -25,10 +24,14 @@ export const Container = styled.div`
     align-items: center;
 
     p {
-      font-family: "Berkshire Swash", cursive;
-      padding: 25px;
-      font-size: 1.7em;
-      /* color: #5e482b; */
+      margin: 0;
+      overflow: scroll;
+      font-family: ${props =>
+        props.history
+          ? "Arial, Helvetica, sans-serif"
+          : "Berkshire Swash, cursive"};
+      padding: 10px;
+      font-size: ${props => (props.history ? "0.9em" : "1.7em")};
       color: #a77133;
 
       text-align: center;

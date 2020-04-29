@@ -27,29 +27,7 @@ export default class App extends Component {
     await this.setState({
       apiData: res.data
     });
-    // this.state.apiData.forEach((character, i) => {
-    //   this.requestInside(character.homeworld, character.starships, i);
-    // });
   };
-
-  // requestInside = async (homeworldReq, starshipsReq, i) => {
-  //   const homeworld = await api.get(homeworldReq);
-  //   const apiData = [...this.state.apiData];
-  //   apiData[i].homeworld = homeworld.data;
-  //   this.setState({
-  //     apiData
-  //   });
-  //   if (starshipsReq) {
-  //     const arr = [];
-  //     starshipsReq.map(async url => {
-  //       const starships = await api.get(url);
-  //       arr.push(starships.data);
-  //     });
-  //     const apiData = [...this.state.apiData];
-  //     apiData[i].starships = arr;
-  //     this.setState({ apiData });
-  //   }
-  // };
 
   handleClick = e => {
     const text = e.target.innerHTML;
@@ -83,9 +61,6 @@ export default class App extends Component {
                           page={page}
                           character={character}
                         />
-                        {/* <img src={character.image} alt={character.name} />
-                        <p>{character.name}</p>
-                        <p>{character.description}</p> */}
                       </div>
                     );
                   })

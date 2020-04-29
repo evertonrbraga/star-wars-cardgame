@@ -1,9 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import { FaGlobeAmericas, FaJedi } from "react-icons/fa";
 
-import { Homeworld } from "../Homeworld";
-import { Starships } from "../Starships";
-import { capitalize, fix } from "../../utils";
+import { BottomInfo } from "../BottomInfo";
 import { CardContainer, InfoContainer } from "./styles";
 import { ThemeContext } from "../../theme-context";
 
@@ -15,7 +13,6 @@ const Card = ({ character, page }) => {
     height,
     mass,
     homeworld,
-    starships,
     description
   } = character;
 
@@ -54,7 +51,7 @@ const Card = ({ character, page }) => {
           }
           className={`homeworld clicky ${homeworldBtn}`}
         >
-          <span>
+          <span className="btn-homeworld">
             <FaGlobeAmericas className="icon" />
             Homeworld
           </span>
@@ -65,17 +62,17 @@ const Card = ({ character, page }) => {
           }
           className={`starships clicky ${starshipsBtn}`}
         >
-          <span>
+          <span className="btn-history">
             <FaJedi className="icon" />
-            Starships
+            History
           </span>
         </button>
       </div>
       <div className="info-container">
         {homeworldBtn ? (
-          <Homeworld homeworld={homeworld} />
+          <BottomInfo content={homeworld} />
         ) : (
-          <Starships name={name} details={starships} />
+          <BottomInfo history content={description} />
         )}
       </div>
     </CardContainer>
