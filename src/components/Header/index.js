@@ -11,7 +11,7 @@ const Header = () => {
       <div className="header">
         <img
           className="logo"
-          onClick={() => this.setState({ page: 1 })}
+          // onClick={() => this.setState({ page: 1 })}
           src={logo}
           alt="Star Wars Logo"
         />
