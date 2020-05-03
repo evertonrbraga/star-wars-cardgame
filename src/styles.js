@@ -5,7 +5,7 @@ export const GlobalStyle = createGlobalStyle`
     font-family: 'Roboto', sans-serif;
   }
 
-  .route-btn {
+  .salmon-btn {
     color: #fff;
     font-weight: bold;
     background: #ec7648;
@@ -20,7 +20,7 @@ export const GlobalStyle = createGlobalStyle`
 export const AppContainer = styled.div`
   width: 100vw;
   height: 100vh;
-  /* height: ${props => (props.apiData ? "auto" : "100vh")}; */
+  /* height: ${(props) => (props.apiData ? "auto" : "100vh")}; */
   background: linear-gradient(to bottom, #430074, black);
   background-attachment: fixed;
   display: flex;

@@ -9,15 +9,12 @@ const Header = () => {
   return (
     <ContentContainer>
       <div className="header">
-        <img
-          className="logo"
-          // onClick={() => this.setState({ page: 1 })}
-          src={logo}
-          alt="Star Wars Logo"
-        />
+        <Link to="/">
+          <img className="logo" src={logo} alt="Star Wars Logo" />
+        </Link>
         <img className="gif" src={catwars} alt="Star Wars Logo" />
       </div>
-      <Link to="/info" className="route-btn">
+      <Link to="/info" className="salmon-btn">
         + INFO
       </Link>
     </ContentContainer>

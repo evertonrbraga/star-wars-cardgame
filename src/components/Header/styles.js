@@ -21,7 +21,7 @@ export const ContentContainer = styled.div`
       transform: rotate(10deg);
     }
   }
-  .route-btn {
+  .salmon-btn {
     position: absolute;
     top: 15px;
     right: 0;

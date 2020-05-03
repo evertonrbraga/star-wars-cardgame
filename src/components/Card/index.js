@@ -3,9 +3,9 @@ import { FaGlobeAmericas, FaJedi } from "react-icons/fa";
 
 import { BottomInfo } from "../BottomInfo";
 import { CardContainer, InfoContainer } from "./styles";
-import { ThemeContext } from "../../theme-context";
+// import { ThemeContext } from "../../theme-context";
 
-const Card = ({ character, page }) => {
+const Card = ({ character }) => {
   const {
     image,
     name,
@@ -13,7 +13,7 @@ const Card = ({ character, page }) => {
     height,
     mass,
     homeworld,
-    description
+    description,
   } = character;
 
   const [homeworldBtn, setHomeworldBtn] = useState("clicked");
@@ -24,7 +24,7 @@ const Card = ({ character, page }) => {
   useEffect(() => {
     setHomeworldBtn("clicked");
     setStarshipsBtn("");
-  }, [page]);
+  }, []);
 
   const handleClick = (name, setHomeworldBtn, setStarshipsBtn) => {
     return name === "homeworld"

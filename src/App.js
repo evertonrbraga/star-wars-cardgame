@@ -15,8 +15,8 @@ const App = () => {
         <BrowserRouter>
           <GlobalStyle />
           <Header />
-          {/* <Router /> */}
-          <Main />
+          <Router />
+          {/* <Main /> */}
         </BrowserRouter>
       </AppContainer>
     </ThemeContext.Provider>
