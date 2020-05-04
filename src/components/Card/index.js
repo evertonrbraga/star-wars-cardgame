@@ -2,8 +2,8 @@ import React, { useState, useEffect, useContext } from "react";
 import { FaGlobeAmericas, FaJedi } from "react-icons/fa";
 
 import { BottomInfo } from "../BottomInfo";
+import { PageContext } from "../../theme-context";
 import { CardContainer, InfoContainer } from "./styles";
-// import { ThemeContext } from "../../theme-context";
 
 const Card = ({ character }) => {
   const {
@@ -17,19 +17,18 @@ const Card = ({ character }) => {
   } = character;
 
   const [homeworldBtn, setHomeworldBtn] = useState("clicked");
-  const [starshipsBtn, setStarshipsBtn] = useState("");
-
-  // const [theme, setTheme] = useContext(ThemeContext);
+  const [historyBtn, setHistoryBtn] = useState("");
+  const [page, setPage] = useContext(PageContext);
 
   useEffect(() => {
     setHomeworldBtn("clicked");
-    setStarshipsBtn("");
-  }, []);
+    setHistoryBtn("");
+  }, [page]);
 
-  const handleClick = (name, setHomeworldBtn, setStarshipsBtn) => {
+  const handleClick = (name, setHomeworldBtn, setHistoryBtn) => {
     return name === "homeworld"
-      ? (setHomeworldBtn("clicked"), setStarshipsBtn(""))
-      : (setHomeworldBtn(""), setStarshipsBtn("clicked"));
+      ? (setHomeworldBtn("clicked"), setHistoryBtn(""))
+      : (setHomeworldBtn(""), setHistoryBtn("clicked"));
   };
 
   return (
@@ -47,7 +46,7 @@ const Card = ({ character }) => {
       <div className="icons">
         <button
           onClick={() =>
-            handleClick("homeworld", setHomeworldBtn, setStarshipsBtn)
+            handleClick("homeworld", setHomeworldBtn, setHistoryBtn)
           }
           className={`homeworld clicky ${homeworldBtn}`}
         >
@@ -56,11 +55,10 @@ const Card = ({ character }) => {
             Homeworld
           </span>
         </button>
+
         <button
-          onClick={() =>
-            handleClick("starships", setHomeworldBtn, setStarshipsBtn)
-          }
-          className={`starships clicky ${starshipsBtn}`}
+          onClick={() => handleClick("history", setHomeworldBtn, setHistoryBtn)}
+          className={`history clicky ${historyBtn}`}
         >
           <span className="btn-history">
             <FaJedi className="icon" />

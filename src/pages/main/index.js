@@ -1,77 +1,56 @@
-import React, { Component } from "react";
+import React, { useState, useEffect, useContext, use } from "react";
 
 import api from "../../services/api";
 import Card from "../../components/Card";
+import { PageContext } from "../../theme-context";
 import { GlobalStyles, AppContainer, ContentContainer } from "./styles";
 
-export default class App extends Component {
-  state = {
-    apiData: "",
-    page: 1,
-  };
+const App = () => {
+  const [apiData, setApiData] = useState(null);
+  const [page, setPage] = useContext(PageContext);
 
-  componentDidMount() {
-    this.requestApi();
-  }
-
-  async componentDidUpdate(_, prevState) {
-    if (prevState.page !== this.state.page) {
-      this.requestApi();
-    }
-  }
-
-  requestApi = async () => {
-    const { page } = this.state;
+  const requestApi = async (page) => {
     const res = await api.get(`/characters/?_page=${page}`);
-    await this.setState({
-      apiData: res.data,
-    });
+    await setApiData(res.data);
   };
 
-  handleClick = (e) => {
+  useEffect(() => {
+    requestApi(page);
+  }, [page]);
+
+  const handleClick = (e) => {
     const text = e.target.innerHTML;
-    return text === "Previous"
-      ? this.setState((prevState) => {
-          return {
-            page: prevState.page - 1,
-          };
-        })
-      : this.setState((prevState) => {
-          return {
-            page: prevState.page + 1,
-          };
-        });
+    return text === "Previous" ? setPage(page - 1) : setPage(page + 1);
   };
 
-  render() {
-    const { apiData, page } = this.state;
-    return (
-      <AppContainer apiData={apiData}>
-        <GlobalStyles />
-        <ContentContainer>
-          <div className="main-wrapper">
-            {apiData
-              ? apiData.map((character, i) => {
-                  return (
-                    <div key={`character${i}`}>
-                      <Card character={character} />
-                    </div>
-                  );
-                })
-              : null}
-          </div>
-        </ContentContainer>
-        <footer>
-          <div className="button-container">
-            <button disabled={page === 1} onClick={this.handleClick}>
-              Previous
-            </button>
-            <button disabled={page === 5} onClick={this.handleClick}>
-              Next
-            </button>
-          </div>
-        </footer>
-      </AppContainer>
-    );
-  }
-}
+  return (
+    <AppContainer apiData={apiData}>
+      <GlobalStyles />
+      <ContentContainer>
+        <div className="main-wrapper">
+          {apiData
+            ? apiData.map((character, i) => {
+                return (
+                  <div key={`character${i}`}>
+                    <Card page={page} character={character} />
+                  </div>
+                );
+              })
+            : null}
+        </div>
+      </ContentContainer>
+      <footer>
+        <div className="button-container">
+          <button disabled={page === 1} onClick={handleClick}>
+            Previous
+          </button>
+          <button disabled={page === 5} onClick={handleClick}>
+            Next
+          </button>
+        </div>
+      </footer>
+    </AppContainer>
+  );
+};
+
+export default App;

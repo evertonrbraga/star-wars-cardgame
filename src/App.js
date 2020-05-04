@@ -2,15 +2,16 @@ import React, { useState } from "react";
 import { BrowserRouter } from "react-router-dom";
 
 import { ThemeContext } from "./theme-context";
+import { PageContext } from "./theme-context";
 import Router from "./routes";
 import Header from "./components/Header";
 import Main from "./pages/main";
 import { AppContainer, GlobalStyle } from "./styles";
 
 const App = () => {
-  const themeHook = useState("yellow");
+  const pageHook = useState(1);
   return (
-    <ThemeContext.Provider value={themeHook}>
+    <PageContext.Provider value={pageHook}>
       <AppContainer>
         <BrowserRouter>
           <GlobalStyle />
@@ -19,7 +20,7 @@ const App = () => {
           {/* <Main /> */}
         </BrowserRouter>
       </AppContainer>
-    </ThemeContext.Provider>
+    </PageContext.Provider>
   );
 };
 

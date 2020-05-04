@@ -19,3 +19,4 @@ import React from "react";
 // };
 
 export const ThemeContext = React.createContext(["purple", () => {}]);
+export const PageContext = React.createContext([1, () => {}]);

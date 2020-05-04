@@ -59,7 +59,7 @@ export const CardContainer = styled.div`
       margin-left: -2px;
     }
 
-    .starships > span {
+    .history > span {
       margin-left: 4px;
     }
 
