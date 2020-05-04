@@ -1,8 +1,8 @@
-import React, { useState, useEffect, useContext, use } from "react";
+import React, { useState, useEffect, useContext } from "react";
 
 import api from "../../services/api";
 import Card from "../../components/Card";
-import { PageContext } from "../../theme-context";
+import { PageContext } from "../../page-context";
 import { GlobalStyles, AppContainer, ContentContainer } from "./styles";
 
 const App = () => {

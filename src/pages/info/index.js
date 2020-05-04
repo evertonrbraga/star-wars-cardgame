@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import {
   FiFacebook,
@@ -9,12 +9,9 @@ import {
   FiYoutube,
 } from "react-icons/fi";
 
-import { ThemeContext } from "../../theme-context";
 import { Container } from "./styles";
 
 const Info = () => {
-  const [theme, setTheme] = useContext(ThemeContext);
-
   return (
     <Container>
       <h1>Star Wars Cardgame</h1>

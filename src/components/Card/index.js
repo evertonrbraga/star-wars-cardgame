@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import { FaGlobeAmericas, FaJedi } from "react-icons/fa";
 
 import { BottomInfo } from "../BottomInfo";
-import { PageContext } from "../../theme-context";
+import { PageContext } from "../../page-context";
 import { CardContainer, InfoContainer } from "./styles";
 
 const Card = ({ character }) => {
@@ -18,7 +18,7 @@ const Card = ({ character }) => {
 
   const [homeworldBtn, setHomeworldBtn] = useState("clicked");
   const [historyBtn, setHistoryBtn] = useState("");
-  const [page, setPage] = useContext(PageContext);
+  const [page] = useContext(PageContext);
 
   useEffect(() => {
     setHomeworldBtn("clicked");
