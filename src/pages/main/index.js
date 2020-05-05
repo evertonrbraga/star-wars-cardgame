@@ -5,7 +5,7 @@ import Card from "../../components/Card";
 import { PageContext } from "../../page-context";
 import { GlobalStyles, AppContainer, ContentContainer } from "./styles";
 
-const App = () => {
+const Main = () => {
   const [apiData, setApiData] = useState(null);
   const [page, setPage] = useContext(PageContext);
 
@@ -53,4 +53,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default Main;
