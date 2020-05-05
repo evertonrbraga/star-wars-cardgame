@@ -2,21 +2,21 @@ import React, { useState } from "react";
 import { BrowserRouter } from "react-router-dom";
 
 import { PageContext } from "./page-context";
-import Anher from "./routes";
+import Routes from "./routes";
 import Header from "./components/Header";
-import { AppContainer, GlobalStyle } from "./styles";
+import { Container, GlobalStyle } from "./styles";
 
 const App = () => {
   const page = useState(1);
   return (
     <PageContext.Provider value={page}>
-      <AppContainer>
+      <Container>
         <BrowserRouter>
           <GlobalStyle />
           <Header />
-          <Anher />
+          <Routes />
         </BrowserRouter>
-      </AppContainer>
+      </Container>
     </PageContext.Provider>
   );
 };

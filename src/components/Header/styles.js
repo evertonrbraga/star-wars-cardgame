@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
-export const ContentContainer = styled.div`
-  width: 45vw;
+export const Container = styled.div`
+  width: 40vw;
   position: relative;
   display: flex;
 
@@ -12,7 +12,7 @@ export const ContentContainer = styled.div`
 
     .logo {
       width: 300px;
-      padding: 25px;
+      padding: 25px 5px 25px 25px;
       cursor: pointer;
     }
 
@@ -21,18 +21,35 @@ export const ContentContainer = styled.div`
       transform: rotate(10deg);
     }
   }
+
   .salmon-btn {
     position: absolute;
     top: 15px;
     right: 0;
   }
 
+  @media (max-width: 1100px) {
+    width: 480px;
+  }
+
   @media (max-width: 480px) {
+    width: 100vw;
     .header {
-      .gif {
-        width: 100px;
-        margin-left: -20px;
+      width: inherit;
+      .logo {
+        width: 270px;
+        padding: 25px 0;
+        /* margin: 0 auto; */
+        cursor: pointer;
       }
+
+      .gif {
+        display: none;
+      }
+    }
+
+    .salmon-btn {
+      right: 15px;
     }
   }
 `;
