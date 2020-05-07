@@ -44,4 +44,23 @@ export const Container = styled.div`
   .salmon-btn {
     margin-top: 20px;
   }
+
+  @media (max-width: 480px) {
+    height: 100%;
+
+    .icon-container {
+      display: block;
+
+      .link-container {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        margin-bottom: 5px;
+      }
+
+      p {
+        margin-bottom: 15px;
+      }
+    }
+  }
 `;

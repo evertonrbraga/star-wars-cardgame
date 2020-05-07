@@ -39,7 +39,6 @@ export const Container = styled.div`
       .logo {
         width: 270px;
         padding: 25px 0;
-        /* margin: 0 auto; */
         cursor: pointer;
       }
 

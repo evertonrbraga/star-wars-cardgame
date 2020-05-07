@@ -25,7 +25,7 @@ const Main = () => {
 
   return (
     <AppContainer apiData={apiData}>
-      <GlobalStyles />
+      {/* <GlobalStyles /> */}
       <ContentContainer>
         <div className="main-wrapper">
           {apiData
