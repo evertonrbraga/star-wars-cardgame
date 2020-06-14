@@ -24,6 +24,11 @@ export const Container = styled.div`
     align-items: center;
     margin: 5px 0;
 
+    .link-container {
+      display: flex;
+      align-items: center;
+    }
+
     a {
       color: #f7e5cd;
       margin: 0;
@@ -42,12 +47,10 @@ export const Container = styled.div`
   }
 
   .salmon-btn {
-    margin-top: 20px;
+    margin: 20px;
   }
 
   @media (max-width: 480px) {
-    height: 100%;
-
     .icon-container {
       display: block;
 

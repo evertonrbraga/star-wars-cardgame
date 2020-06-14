@@ -3,7 +3,7 @@ import React, { useState, useEffect, useContext } from "react";
 import api from "../../services/api";
 import Card from "../../components/Card";
 import { PageContext } from "../../page-context";
-import { GlobalStyles, AppContainer, ContentContainer } from "./styles";
+import { AppContainer, ContentContainer } from "./styles";
 
 const Main = () => {
   const [apiData, setApiData] = useState(null);
@@ -25,7 +25,6 @@ const Main = () => {
 
   return (
     <AppContainer apiData={apiData}>
-      {/* <GlobalStyles /> */}
       <ContentContainer>
         <div className="main-wrapper">
           {apiData

@@ -55,6 +55,12 @@ export const CardContainer = styled.div`
       }
     }
 
+    .homeworld,
+    .history {
+      display: flex;
+      align-items: center;
+    }
+
     .homeworld > span {
       margin-left: -2px;
     }
