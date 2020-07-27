@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import { FaGlobeAmericas, FaJedi } from "react-icons/fa";
 
-import { BottomInfo } from "../BottomInfo";
+import { BottomInfo } from "./BottomInfo";
 import { PageContext } from "../../page-context";
 import { CardContainer, InfoContainer } from "./styles";
 
