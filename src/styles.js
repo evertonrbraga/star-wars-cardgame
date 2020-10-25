@@ -7,6 +7,7 @@ export const GlobalStyle = createGlobalStyle`
 
   .salmon-btn {
     color: #fff;
+    border: none;
     font-weight: bold;
     background: #ec7648;
     text-shadow: -1px 1px 2px #2e2622;
